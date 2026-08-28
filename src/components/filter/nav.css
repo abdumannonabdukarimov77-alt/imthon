@@ -1,0 +1,33 @@
+.filter,.main-card,.listwrapper{
+    box-shadow:0 0 30px rgba(0, 0, 0, 0.3) ;
+}
+.list{
+    border-bottom: 1px solid gray;
+}
+.list.active{
+    color: orange !important;
+}
+.list:last-child{
+    border-bottom: none;
+}
+.valueinput{
+    background-color: #FFF;
+    border: none;
+}
+.btn-cookie{
+    border: none;
+}
+.fa-cookie{
+    color: orange;
+}
+.fa-trash{
+    color: red;
+}
+.fa-star{
+    color: orange;
+    opacity: 0;
+}
+.fa-star.show{
+    opacity: 1;
+    transition: .3s ease;
+}
