@@ -1,0 +1,277 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background:
+        radial-gradient(circle at 90% 10%, #07552f 0%, transparent 40%),
+        radial-gradient(circle at 10% 90%, #064d2c 0%, transparent 35%),
+        #000b04;
+    min-height: 100vh;
+}
+
+.container_{
+    max-width: 1600px;
+    width: 95%;
+    margin: 0px auto;
+    padding: 25px 50px;
+    color: white;
+}
+
+.login{
+    background-color: #1DE782;
+    color: aliceblue;
+    border: none;
+}
+
+.registr{
+    color: #FFF;
+    background:none;
+    border:1px solid #FFF;
+}
+
+.btns{
+    padding: 7px 18px;
+    border-radius: 7px;
+    margin-left: 15px;
+}
+
+.logo{
+    width: 127px;
+}
+
+h3{
+    color: #FFF;
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+.card{
+    text-align: center;
+    background-color: red;
+}
+
+.main{
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 30px 100px;
+    justify-content: center;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between ;
+    width: 50%;
+    padding: 25px 50px;
+    color: white;
+}
+
+.register{
+    display: flex;
+    height: 100vh;
+    max-width: 1600px;
+    width: 100%;
+    margin: 0px auto;
+}
+
+.text{
+    font-size: 60px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.right{
+    width: 50%;
+    padding: 25px 50px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.email{
+    color:gray;
+    font-weight: 400;
+    font-size: 19px;
+}
+
+.input{
+    width: 100%;
+    border: 1.6px solid lightgray;
+    border-radius: 7px;
+    padding: 5px 15px;
+    margin-bottom: 10px;
+}
+
+.regis{
+    width: 450px;
+}
+
+.button{
+    border:none;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 7px;
+    background-color: #1DE782;
+    color:white;
+    margin-top: 5px;
+}
+
+.p{
+    color: #1DE782;
+
+}
+
+.log{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+
+.logi{
+    width: 40%;
+    background-color: #fff;
+    padding: 50px 40px 30px;
+    border-radius: 10px;
+}
+
+.tick{
+    color: #FFF;
+    background:none;
+    border: none;
+    padding: 0px;
+    transition: 1s;
+}
+
+.tick:hover{
+    border-bottom:2px solid #1DE782;
+    transition: 1s;
+    padding: 0 10px;
+
+}
+
+.logaut{
+    background-color: #DC0000;
+    color: aliceblue;
+    border: none;   
+}
+
+.tciked{
+    background:none;
+    border:1px solid #DDDEDF;
+}
+
+.active{
+    background-color: #1DE782;
+    border:none;
+}
+
+.btnn{
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: #FFF;
+}
+
+.cart{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 300px;
+    border:1px solid white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.btnt{
+    width: 100%;
+    padding: 7px 0;
+    border-radius: 10px;   
+    color: #FFF;
+    background-color: #1DE782;
+    border: none;
+}
+
+.btnm{
+    padding: 10px;
+    color: #FFF;
+    border-radius: 5px;
+}
+
+.flex{
+    display: flex;
+    flex-direction: column;
+    width: 92%;
+    gap: 50px;
+    margin: 0 auto;
+}
+
+.btnp{
+    padding: 7px 50px;
+    border-radius: 7px;
+}
+
+.show{
+    display: block;
+}
+
+.mainn{
+    width: 28%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.incod{
+    width: 70px;
+    height: 70px;
+    font-size: 40px;
+    padding: 25px;
+    border: 2px solid white;
+    border-radius: 13px;
+    background:none;
+    color:white;
+}
+
+.code{
+    width: 28%;
+    text-align: center;
+}
+
+.payment{
+    padding: 20px;
+    background-color: #1DE78240;
+    border-radius: 50%;
+}
+
+.paymen{
+    width: 350px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    color: #DDDEDF;
+}
+
+.btente{
+    width: 100%;
+    padding: 7px 0;
+    border-radius: 10px;   
+    color: #FFF;
+    background:none;
+    border: 1px solid white;
+}
+
+.bbb{
+    width: 22%;
+    padding: 7px 0;
+    border-radius: 10px;   
+    color: #FFF;
+    background:none;
+    border: 1px solid white;
+    margin-top: 50px;
+}

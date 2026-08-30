@@ -1,10 +1,9 @@
-import '../filter/nav.css'
 
-function Card ({length, addsubmit}){
+function Card({title, img}){
     return(
-        <div className="main-card rounded mt-5 p-4">
-            <h1>Barcha kinolar soni : {length}</h1>
-            <h1>Ko'rilgan kinolar soni : {addsubmit}</h1>
+        <div>
+            <img src={img} alt="img" />
+            <h3>{title}</h3>
         </div>
     )
 }

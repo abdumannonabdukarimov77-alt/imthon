@@ -1,84 +1,152 @@
-        import Card from "../Card/Card";
-        import Filter from "../filter/filter";
-        import Footer from "../footer/footer";
-        import { v4 as uuidv4 } from 'uuid';
-        import List from "../list/list";
-        import { useState } from "react";
+import Code from "../code/code.jsx";
+import Payment from "../payment/payment.jsx";
+import Nav from "../nav/nav.jsx";
+import Detal from "../detal/detal.jsx";
+import Seat from "../seat/seat.jsx";
+import Carta from "../Card/carta.jsx";
+import Tciked from "../tciked/tciked.jsx";
+import Logaut from "../logaut/logaut.jsx";
+import Login from "../login/login.jsx";
+import Register from "../register/register.jsx";
+import Card from "../card/card.jsx";      
+import Send from "../Ticket/Ticket.jsx";
+import { v4 as uuidv4 } from "uuid";    
+import { useState } from "react";
+import { Routes, Route, Link, useParams } from "react-router-dom";
+import Filter from "../filter/filter.jsx";
 
-        function App(){
+let data = [
+        {
+            title:"Movie Title",
+            img: "/imgs/Movie.png",
+            id : uuidv4()
+        },
+        
+        {
+            title:"Movie Title",
+            img: "/imgs/image 2.png",
+            id : uuidv4()
+        },
 
-            let [data, setData] = useState([
-                {
-                    title : "Empire of Osman",
-                    vives : "998",
-                    kategory : "kopkurilgan",
-                    id : uuidv4()
-                },
-                {
-                    title : "Spider man brand new day",
-                    vives : "998",
-                    kategory : "mashhur",
-                    id : uuidv4()  
-                },
-                {
-                    title : "Harri porter",
-                    vives : "998",
-                    kategory : "mashhur",
-                    id : uuidv4()  
-                },
-                {
-                    title : "Alhazar",
-                    vives : "998",
-                    kategory : "kopkurilgan",
-                    id : uuidv4()  
-                },
-                {
-                    title : "Termenator",
-                    vives : "998",
-                    kategory : "mashhur",
-                    id : uuidv4() 
-                } 
-            ])
+        {
+            title:"Movie Title",
+            img: "/imgs/image 3.png",
+            id : uuidv4()
+        },
 
-            let [search, setSearch] = useState("")
-            let [addsubmit, setAddsubmit] = useState(0)
-            let [filter, setFilter] = useState("barchasi")
+        {
+            title:"Movie Title",
+            img: "/imgs/image 4.png",
+            id : uuidv4()
+        },
 
-            function deleteItems(id){
-                let filterData = data.filter((item) => item.id !== id); 
-                setData(filterData);
-            }
+        {
+            title:"Movie Title",
+            img: "/imgs/image 5.png",
+            id : uuidv4()
+        },
 
-            function addMovie(newMovie){
-                setData((prev)=>[...prev, newMovie])
-            }
-
-        const filteredData = data
-    .   filter((item)=> item.title.toLocaleLowerCase().includes(search.toLocaleLowerCase()))
-    .   filter((item)=>{
-        if(filter === "mashhur"){
-            return item.kategory === "mashhur"
+        {
+            title:"Movie Title",
+            img: "/imgs/image 6.png",
+            id : uuidv4()
         }
 
-        if(filter === "kopkurilgan"){
-            return item.kategory === "kopkurilgan"
-        }
+    ]
 
-        if(filter === "barchasi"){
-            return true
-        }
+    function CartaPage() {
+    let { id } = useParams();
 
-        return true
-       })
+    let movie = data.find(item => item.id === id);
 
+    if (!movie) {
+        return <h2>Movie topilmadi</h2>;
+    }
+
+    return (
+        <div className="container_">
+            <Nav />
+            <Filter img={movie.img} title={movie.title} />
+        </div>
+    );
+}
+
+function App(){
             return(
-                <div className="container">
-                    <Card length={data.length} addsubmit={addsubmit}/>
-                    <Filter search={search} setSearch={setSearch} setFilter={setFilter}/>
-                    <List deleteItems={deleteItems} data={filteredData} setAddsubmit={setAddsubmit}/>
-                    <Footer addMovie={addMovie}/>
-                </div>
+                <Routes>
+                <Route path="/" element={
+                <div className="container_">
+                    <div>
+                        <Nav/>
+                        <div className="mt-4">
+                            <h1 className="text-white text-center">Now Showing</h1>
+                            <div className="text-center main">
+                                {
+                                    data.map(({title, img, id})=>{
+                                        return(
+                                            <Link to={`/carta/${id}`} key={id}>
+                                                <Card title={title} img={img} />
+                                            </Link>
+                                        )
+                                    })
+                                }
+                            </div>
+                        </div>
+                    </div> 
+        </div>
+        }/>
+                <Route path="/registr" element={
+                    <Register/>
+                }/>
+                <Route path="/login" element={
+                    <Login/>
+                }/>
+                <Route path="/logaut" element={
+                    <div className="container_">
+                    <div>
+                        <Logaut/>
+                        <div className="mt-4">
+                            <h1 className="text-white text-center">Now Showing</h1>
+                            <div className="text-center main">
+                                {
+                                    data.map(({title, img, id})=>{
+                                        return(
+                                            <Link to={`/carta/${id}`} key={id}>
+                                                <Card title={title} img={img} />
+                                            </Link> 
+                                        )
+                                    })
+                                }
+                            </div>
+                        </div>
+                    </div> 
+        </div>
+                }/>
+                <Route path="/tciked" element={
+                    <div className="container_">
+                        <Logaut/>
+                        <Tciked/>
+                    </div>
+                } />
+                <Route path="/carta/:id" element={
+                    <CartaPage />
+                } />
+                <Route path="/seat" element={
+                    <Seat/>
+                } />
+                <Route path="/detal" element={
+                    <Detal/>
+                } />
+                <Route path="/code" element={
+                    <Code/>
+                } />
+                <Route path="/post" element={
+                    <Payment/>
+                } />
+                <Route path="/tisket" element={
+                    <Send/>
+                } />
+            </Routes>
             )
-        }
-
-        export default App;
+}
+    export default App;

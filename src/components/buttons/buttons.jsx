@@ -1,9 +1,14 @@
-function Button({ title, active, onClick}){
+import "../nav.css";
+import { Link } from "react-router-dom"; 
+
+
+function Nav(){
     return(
-        <button onClick={onClick} className={`btn btn-outline-dark rounded-0 ${active}`}>
-            {title}
-        </button>
+        <div className="btn-flex">
+            <Link to='/login' ><button className="btns login">Login</button></Link>
+            <Link to='/registr' ><button className="btns registr">Register</button></Link>
+        </div>
     )
 }
 
-export default Button
+export default Nav; 
