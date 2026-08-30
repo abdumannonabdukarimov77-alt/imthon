@@ -8,7 +8,7 @@ import Tciked from "../tciked/tciked.jsx";
 import Logaut from "../logaut/logaut.jsx";
 import Login from "../login/login.jsx";
 import Register from "../register/register.jsx";
-import Card from "../card/card.jsx";      
+import Card from "../Card/Card.jsx";
 import Send from "../Ticket/Ticket.jsx";
 import { v4 as uuidv4 } from "uuid";    
 import { useState } from "react";
